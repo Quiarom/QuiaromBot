@@ -1,17 +1,24 @@
+// If you are sad, This bot uses encouragement quotes to cheer you up
+
 const Discord = require('discord.js')
 const fetch = require("node-fetch")
 const client = new Discord.Client()
 
 const sadWords = [
-	"sad", 
-	"depressed", 
-	"unhappy", 
+	"sad",
+	"depressed",
+	"unhappy",
 	"angry",
-	"triste"
-	]
+	"triste",
+	"ya no aguanto más",
+	"ando de malas"
+]
 
 const encouragments = [
-	"Llora pues"
+	"Llora pues",
+	"- Ingresa chiste malo pero gracioso - ",
+	"Toma una papa (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧🥔",
+	"Al menos tu tienes brazos"
 ]
 
 function getQuote() {
@@ -26,18 +33,20 @@ function getQuote() {
 }
 
 client.on("ready", () => {
-	console.log(`Logged in as ${client.user.tag}`) 
+	console.log(`Logged in as ${client.user.tag}`)
 })
 
 client.on("message", msg => {
-	if (msg.author.bot) return 
+	if (msg.author.bot) return
 
 	if (msg.content === "$inspire") {
 		getQuote().then(quote => msg.channel.send(quote))
 	}
 
-	if (sadWords.some(word => msg.content.includes(word))){
+	if (sadWords.some(word => msg.content.includes(word))) {
+
 		const encouragment = encouragments[Math.floor(Math.random() * encouragments.length)]
+
 		msg.reply(encouragment)
 	}
 })
