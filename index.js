@@ -10,15 +10,14 @@ const sadWords = [
 	"unhappy",
 	"angry",
 	"triste",
-	"ya no aguanto más",
-	"ando de malas"
+	"Ya no aguanto más",
+	"Ando de malas"
 ]
 
 const encouragments = [
-	"Llora pues",
 	"- Ingresa chiste malo pero gracioso - ",
 	"Toma una papa (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧🥔",
-	"Al menos tu tienes brazos"
+	"No llores, al menos tu tienes brazos"
 ]
 
 function getQuote() {
